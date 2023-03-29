@@ -77,7 +77,13 @@ void loop()
     //read back one line from the server
     String line = client.readStringUntil('\r');
     Serial.println(line);
+    int x;
+    x = line.indexOf("\"sunset\"");
+    line = line.substring(x);
+    x = line.indexOf(","); Serial.print("virgula="); Serial.println(x);
+    String sunset;
   }
+  //  sunset = line.substring(8, )  }
   else
   {
     Serial.println("client.available() timed out ");
